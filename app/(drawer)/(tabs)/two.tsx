@@ -1,7 +1,9 @@
 import { StyleSheet, View, Text, FlatList } from "react-native";
+import { Entypo } from "@expo/vector-icons";
 
 import Trends from "../../../components/Trends";
 import trends from "../../../assets/data/trends";
+import floatingBtnS from "../../../components/FloatingBtn";
 
 export default function TabTwoScreen() {
   return (
@@ -11,6 +13,9 @@ export default function TabTwoScreen() {
         data={trends}
         renderItem={({ item }) => <Trends trends={item} />}
       />
+      <View style={floatingBtnS.floatinBtn}>
+        <Entypo name="plus" size={24} color="white" />
+      </View>
     </View>
   );
 }

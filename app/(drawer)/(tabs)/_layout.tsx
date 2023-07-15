@@ -37,6 +37,22 @@ function Logo() {
   );
 }
 
+function SearchBar({ placeholder }: any) {
+  return (
+    <TextInput
+      placeholder={placeholder}
+      style={{
+        backgroundColor: "lightgrey",
+        borderRadius: 50,
+        width: 300,
+        paddingHorizontal: 15,
+        paddingVertical: 5,
+        fontWeight: "600",
+      }}
+    />
+  );
+}
+
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
@@ -44,6 +60,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarShowLabel: false,
       }}
     >
       <Tabs.Screen
@@ -59,21 +76,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="two"
         options={{
-          headerTitle: () => (
-            <TextInput
-              placeholder="Search Twitter"
-              style={{
-                backgroundColor: "lightgrey",
-                borderRadius: 50,
-                width: 300,
-                paddingHorizontal: 15,
-                paddingVertical: 5,
-                fontWeight: "600",
-              }}
-            />
-          ),
+          headerTitle: () => <SearchBar placeholder={"Search Twitter"} />,
           headerTitleAlign: "left",
-          tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="search1" color={color} />
           ),
@@ -81,7 +85,7 @@ export default function TabLayout() {
             <AntDesign
               name="setting"
               size={24}
-              color="black"
+              color="grey"
               style={{ marginRight: 10 }}
             />
           ),
@@ -91,7 +95,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="spaces"
         options={{
-          tabBarShowLabel: false,
+          title: "Twitter",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="google-podcast"
@@ -99,12 +103,13 @@ export default function TabLayout() {
               color={color}
             />
           ),
+          headerLeft: () => <AvatarHeader />,
         }}
       />
       <Tabs.Screen
         name="notification"
         options={{
-          tabBarShowLabel: false,
+          title: "Notifications",
           tabBarIcon: ({ color }) => (
             <Ionicons
               name="ios-notifications-outline"
@@ -112,15 +117,35 @@ export default function TabLayout() {
               color={color}
             />
           ),
+          headerLeft: () => <AvatarHeader />,
+          headerRight: () => (
+            <AntDesign
+              name="setting"
+              size={24}
+              color="grey"
+              style={{ marginRight: 10 }}
+            />
+          ),
         }}
       />
       <Tabs.Screen
         name="messages"
         options={{
-          tabBarShowLabel: false,
+          headerTitle: () => (
+            <SearchBar placeholder={"Search Direct Messages"} />
+          ),
           tabBarIcon: ({ color }) => (
             <FontAwesome name="envelope-o" size={24} color={color} />
           ),
+          headerRight: () => (
+            <AntDesign
+              name="setting"
+              size={24}
+              color="grey"
+              style={{ marginRight: 10 }}
+            />
+          ),
+          headerLeft: () => <AvatarHeader />,
         }}
       />
     </Tabs>
