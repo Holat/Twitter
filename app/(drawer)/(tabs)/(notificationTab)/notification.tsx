@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import { Ionicons, Entypo } from "@expo/vector-icons";
 
-import floatingBtnS from "../../../components/FloatingBtn";
+import floatingBtnS from "../../../../components/FloatingBtn";
 const Notification = () => {
   return (
     <View

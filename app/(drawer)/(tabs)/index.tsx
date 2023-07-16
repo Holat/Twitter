@@ -14,10 +14,12 @@ export default function TabOneScreen() {
         data={tweets}
         renderItem={({ item }) => <Tweet tweet={item} />}
       />
-      <Link href={"/new-tweet"} asChild>
-        <View style={floatingBtnS.floatinBtn}>
-          <Entypo name="plus" size={24} color="white" />
-        </View>
+      <Link
+        href={"/new-tweet"}
+        style={[floatingBtnS.floatinBtn, styles.fl]}
+        asChild
+      >
+        <Entypo name="plus" size={24} color="white" />
       </Link>
     </View>
   );
@@ -27,5 +29,10 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: "white",
+  },
+
+  fl: {
+    lineHeight: 50,
+    textAlign: "center",
   },
 });

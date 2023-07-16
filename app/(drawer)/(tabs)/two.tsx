@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, FlatList } from "react-native";
+import { StyleSheet, View, Text, FlatList, Pressable } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 
 import Trends from "../../../components/Trends";
