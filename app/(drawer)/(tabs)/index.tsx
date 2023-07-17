@@ -1,5 +1,4 @@
-import { StyleSheet, FlatList, Pressable } from "react-native";
-import { View } from "../../../components/Themed";
+import { StyleSheet, FlatList, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { Link } from "expo-router";
 

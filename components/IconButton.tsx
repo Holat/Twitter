@@ -2,8 +2,6 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { EvilIcons } from "@expo/vector-icons";
 
-import { Tweets } from "../types";
-
 type IconButtonProps = {
   icon: React.ComponentProps<typeof EvilIcons>["name"];
   text?: number | string;
