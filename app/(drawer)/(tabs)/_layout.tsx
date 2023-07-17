@@ -1,5 +1,6 @@
-import { Link, Tabs, useNavigation } from "expo-router";
+import { Tabs } from "expo-router";
 import { Pressable, useColorScheme, Image, TextInput } from "react-native";
+import { DrawerActions, useNavigation } from "@react-navigation/native";
 import {
   AntDesign,
   MaterialCommunityIcons,
@@ -19,7 +20,7 @@ function TabBarIcon(props: {
 function AvatarHeader() {
   const navigation = useNavigation();
   return (
-    <Pressable onPress={() => navigation.openDrawer()}>
+    <Pressable onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
       <Image
         source={{ uri: "https://files.fm/thumb_show.php?i=rpcdpy4jn" }}
         style={{ width: 30, aspectRatio: 1, borderRadius: 40, marginLeft: 10 }}

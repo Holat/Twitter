@@ -1,9 +1,5 @@
 import { withLayoutContext } from "expo-router";
-import {
-  DrawerContentScrollView,
-  DrawerItemList,
-  createDrawerNavigator,
-} from "@react-navigation/drawer";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Pressable } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
